@@ -1,7 +1,6 @@
-在include/openvswitch/flow.h裡面的struct flow定義增加uint32_t mf_field這個member 在lib/nx-match.c裡面的nx_pull_raw增加match->flow.mf_field = field->id; 在lib/ofp-util.c裡面的ofputil_decode_flow_mod function中的ofputil_pull_ofp11_match後面對fm做print
+In this project we parsing openflow flow_mod packet in ofp-util.c to send vlan or mac addr to netlink and add SFC start function.
 
-以上參考http://www.sdnlab.com/15786.html
-
+Must run with the OF_VF driver
 
 .. NOTE(stephenfin): If making changes to this file, ensure that the line
    numbers found in 'Documentation/intro/what-is-ovs' are kept up-to-date.
