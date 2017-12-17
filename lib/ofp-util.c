@@ -1858,7 +1858,7 @@ ofputil_decode_flow_mod(struct ofputil_flow_mod *fm,
 	if (sfc_proc(fp,vf) > 0) 
 	    fprintf(fp, "sfc error\n");
     }
-    if (ofp_to_u16(ofpact_get_OUTPUT(fm->ofpacts)->port) != 65533 && fm->match.flow.in_port.ofp_port == 1) {
+    if (fm->match.flow.in_port.ofp_port == 1) {
 	fprintf(fp, "port = %u\n", fm->match.flow.in_port.ofp_port);
 	for(int i=0; i<(ofpacts->size)/16; i++) {
 	    vf[i] = *(uint8_t *)((ofpacts->data)+4+16*i);
